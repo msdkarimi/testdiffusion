@@ -2,6 +2,12 @@
 Train a diffusion model on images.
 """
 
+import sys
+sys.path.append("../")  # Adjust the path as needed
+import os
+print(os.getcwd())
+
+
 import argparse
 
 from improved_diffusion import dist_util, logger
@@ -65,7 +71,7 @@ def create_argparser():
         lr=1e-4,
         weight_decay=0.0,
         lr_anneal_steps=0,
-        batch_size=32,
+        batch_size=16,
         microbatch=-1,  # -1 disables microbatches
         ema_rate="0.9999",  # comma-separated list of EMA values
         log_interval=10,
